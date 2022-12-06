@@ -13,6 +13,6 @@ describe('Testing Employee Class', () => {
         expect(employee.name).toBe(name);
         expect(employee.id).toBe(id);
         expect(employee.email).toBe(email);
-        expect(employee.getRole).toBe(getRole);
+        expect(employee.getRole()).toBe(getRole);
     });
 });

@@ -3,9 +3,9 @@ const generateManager = function (manager) {
     return `
     <div class = "col-4 mt-4">
         <div class = "card h-100">
-            <div class="card-header">
-                <h1> ${manager.name}</h1>
-                <h2>Manager</h2><i class="material-icons">content_paste</i>
+            <div class="card-header text-center">
+                <h3>${manager.name}</h3>
+                <h4>Manager</h4><i class="material-icons">content_paste</i>
              </div>
     
             <div class="card-body">
@@ -23,9 +23,9 @@ const generateEngineer = function (engineer) {
     return `
     <div class = "col-4 mt-4">
         <div class = "card h-100">
-            <div class="card-header">
-                <h1> ${engineer.name}</h1>
-                <h2>Engineer</h2><i class="material-icons">content_paste</i>
+            <div class="card-header text-center">
+                <h3> ${engineer.name}</h3>
+                <h4>Engineer</h4><i class="material-icons">laptop_windows</i>
              </div>
     
             <div class="card-body">
@@ -38,14 +38,14 @@ const generateEngineer = function (engineer) {
     `;
 }
 
-//Inter Card
-const generateIntern = function (Intern) {
+//Intern Card
+const generateIntern = function (intern) {
     return `
     <div class = "col-4 mt-4">
         <div class = "card h-100">
-            <div class="card-header">
-                <h1> ${intern.name}</h1>
-                <h2>Intern</h2><i class="material-icons">assignment_ind</i>
+            <div class="card-header text-center">
+                <h3> ${intern.name}</h3>
+                <h4>Intern</h4><i class="material-icons">assignment_ind</i>
              </div>
     
             <div class="card-body">
@@ -60,67 +60,64 @@ const generateIntern = function (Intern) {
 
 //push array to generatedHTML page
 
-generateHTML = (data) => {
+const generateHTML = (data) => {
 
-//card array
-pageArray = [];
+    //card array
+    pageArray = [];
 
-for (let i = 0; i <data.length; i++) {
-    const employee = data[i];
-    const role = employee.getRole();
+    for (let i = 0; i < data.length; i++) {
+        const employee = data[i];
+        const role = employee.getRole();
 
-    //call manager function
-    if (role === 'Manager') {
-        const managerCard = generateManager(employee);
+        //call manager function
+        if (role === 'Manager') {
+            const managerCard = generateManager(employee);
 
-        pageArray.push(managerCard);
+            pageArray.push(managerCard);
+        }
+
+        //call engineer function
+        if (role === 'Engineer') {
+            const engineerCard = generateEngineer(employee);
+
+            pageArray.push(engineerCard);
+        }
+
+        //call intern function
+        if (role === 'Intern') {
+            const internCard = generateIntern(employee);
+
+            pageArray.push(internCard);
+        }
     }
 
-    //call engineer function
-    if (role === 'Engineer') {
-        const engineerCard = generateEngineer(employee);
+    //join strings
+    const employeeCards = pageArray.join('')
 
-        pageArray.push(engineerCard);
-    }
-
-    //call intern function
-    if (role === 'Intern') {
-        const internCard = generateIntern(employee);
-
-        pageArray.push(internCard);
-    }
-}
-
-//join strings
-const employeeCards = pageArray.join('')
-
-//return to generated page
-const generateTeam = generateTeamHTML(employeeCards)
-return generateTeam;
+    //return to generated page
+    const generateTeam = generateTeamHTML(employeeCards)
+    return generateTeam;
 }
 
 //generate html
-const generateTeamPage = function (employeeCards) {
-    return`
-    <DOCTYPE html>
+const generateTeamHTML = function (employeeCards) {
+    return `
+    <!DOCTYPE html>
     <html lang="en">
     <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your A-Team Profile</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
-    <link rel="stylesheet" href="./dist/style.css" />
-    <script src="https://kit.fontawesome.com/93df6eac37.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet" />
-    </head>  
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Team Profile</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Public+Sans:300i,300,500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
     <body>
         <header>
             <nav class="navbar" id="navbar">
-                <span class="navbar-brand mb-0 h1 w-100 text-center" id="navbar-text">A-Team Profile</span>
+                <span class="navbar-brand mb-0 h1 w-100 text-center" id="navbar-text">Team Profile</span>
             </nav>
         </header>
         <main>
@@ -133,12 +130,13 @@ const generateTeamPage = function (employeeCards) {
         </main>
         
     </body>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-      crossorigin="anonymous"></script>
-    `;
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    </html>
+  
+`;
 }
 
-//export
-module.exports = generateHTML;
+// export to index
+module.exports = generateHTML; 

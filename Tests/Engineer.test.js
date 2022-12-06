@@ -14,7 +14,7 @@ describe('Testing Engineer Class', () => {
         expect(engineer.name).toBe(name);
         expect(engineer.id).toBe(id);
         expect(engineer.email).toBe(email);
-        expect(engineer.github).toBe(gitHub);
-        expect(engineer.getRole).toBe(getRole);
+        expect(engineer.gitHub).toBe(gitHub);
+        expect(engineer.getRole()).toBe(getRole);
     });
 });

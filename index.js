@@ -166,29 +166,27 @@ const addEmployee = () => {
             type: 'confirm',
             name: 'confirmaddEmployee',
             message: 'Would you like to add more team members?',
+            default: false
         }
     ])
         //employee type info
         .then(employeeInput => {
 
-            let { name, id, role, gitHub, school, confirmAddEployee } = employeeInput;
+            let { name, id, email, role, gitHub, school, confirmAddEployee } = employeeInput;
             let teamMember;
 
             if (role === "Engineer") {
-                employee = new Engineer(name, id, email, gitHub);
+                teamMember = new Engineer(name, id, email, gitHub);
 
-                console.log(employee);
+                console.log(teamMember);
 
             } else if (role === "Intern") {
-                employee = new Intern(name, id, email, school)
+                teamMember = new Intern(name, id, email, school)
 
-                console.log(employee);
-            } else if (role === "Manager") {
-                employee = new Manager(name, id, email, officeNum)
-
-                console.log(employee);
+                console.log(teamMember);
             }
-            teamArray.push(employee);
+            
+            teamArray.push(teamMember);
 
             if (confirmAddEployee) {
                 return addEmployee(teamArray);
@@ -206,7 +204,7 @@ const writeFile = data => {
             console.log(err);
             return;
         } else {
-            console.log("Your team profile has been created! Please click on the team.html.")
+            console.log("Your team profile has been created! Please click on the team.html in the dist folder.")
         }
     })
 };
@@ -218,7 +216,7 @@ addManager()
         return generateHTML(teamArray);
     })
     .then(pageHTML => {
-        return writeFile(teamHTML);
+        return writeFile(pageHTML);
     })
     .catch(err => {
         console.log(err);
