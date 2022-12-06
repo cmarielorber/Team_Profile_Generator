@@ -166,13 +166,13 @@ const addEmployee = () => {
             type: 'confirm',
             name: 'confirmaddEmployee',
             message: 'Would you like to add more team members?',
-            choices: ['yes', 'no']
+            choices: ['yes', 'no'],
         }
     ])
         //employee type info
         .then(employeeInput => {
 
-            let { name, id, email, role, gitHub, school, confirmAddEployee } = employeeInput;
+            let { name, id, email, role, gitHub, school, confirmaddEmployee } = employeeInput;
             let teamMember;
 
             if (role === "Engineer") {
@@ -188,7 +188,7 @@ const addEmployee = () => {
 
             teamArray.push(teamMember);
 
-            if (confirmAddEployee) {
+            if (confirmaddEmployee) {
                 return addEmployee(teamArray);
             } else {
                 return teamArray;
