@@ -91,7 +91,7 @@ const addEmployee = () => {
             type: 'list',
             name: 'role',
             message: "Please choose your employee's role...",
-            choices: ['Engineer', 'Intern', 'Manager']
+            choices: ['Engineer', 'Intern']
         },
 
         {
@@ -166,7 +166,7 @@ const addEmployee = () => {
             type: 'confirm',
             name: 'confirmaddEmployee',
             message: 'Would you like to add more team members?',
-            default: false
+            choices: ['yes', 'no']
         }
     ])
         //employee type info
@@ -185,7 +185,7 @@ const addEmployee = () => {
 
                 console.log(teamMember);
             }
-            
+
             teamArray.push(teamMember);
 
             if (confirmAddEployee) {
