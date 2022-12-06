@@ -166,7 +166,6 @@ const addEmployee = () => {
             type: 'confirm',
             name: 'confirmaddEmployee',
             message: 'Would you like to add more team members?',
-            default: false
         }
     ])
         //employee type info
