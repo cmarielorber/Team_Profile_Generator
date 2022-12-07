@@ -23,6 +23,8 @@ This project demonstrates the use of Object-Oriented Programming (OOP) and Test 
 
 ## Demo
 
+[Team Profile Generator Demo](https://drive.google.com/file/d/1abxZiQFwcibOLJMBa1ywJEHoYzPuEPEC/view)
+
 ## Installation
 
 First clone the repository then run the following command to install Inquirer and Jest dependency packages:
