@@ -1,20 +1,16 @@
 # Team Profile Generator
 Dynamically generate a team of employees and print to an html document.
 
----
 
 Created by: Christen Lorber
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)e
 
 ## Description
----
-This project demonstrates the use of Object-Oriented Programming (OOP) and Test Driven Development (TDD). The Team Profile Generator is a command-line-input application from Node that generates a team profile based on a user's input with the module Inquirer from Node.js. Once prompted, the user will enter however many team members they desire. Once the user's team is complete, an html is generated to display the team using the FS module. 
 
+This project demonstrates the use of Object-Oriented Programming (OOP) and Test Driven Development (TDD). The Team Profile Generator is a command-line-input application from Node that generates a team profile based on a user's input with the module Inquirer from Node.js. Once prompted, the user will enter however many team members they desire. Once the user's team is complete, an html is generated to display the team using the FS module. e
 ## Table of Contents
----
+
 * [Demo](#demo)
 * [Installation](#installation)
 * [Tests](#tests)
@@ -26,11 +22,8 @@ This project demonstrates the use of Object-Oriented Programming (OOP) and Test 
 * [Questions](#questions)
 
 ## Demo
----
-
 
 ## Installation
----
 
 First clone the repository then run the following command to install Inquirer and Jest dependency packages:
 ```
@@ -39,7 +32,6 @@ npm i
 
 
 ## Tests
----
 
 Running the tests will prove functionality of the code. Type the following command to run Jest for the tests on the constructors:
 ```
@@ -47,7 +39,6 @@ npm run test
 ```
 
 ## Usage
----
 
 Once the dependencies have been installed, type in the following command into your terminal to start the application:
 ```
@@ -65,8 +56,7 @@ The user will be prompted with various questions to build their team. Once the u
     - Jest (Tests)
     - Constructors and Classes/Sub-Classes
 
-## Technology Links
----
+## Technology Linke
 
 <a href="https://nodejs.org/en/" target="_blank">Node.js</a>
 
@@ -75,16 +65,13 @@ The user will be prompted with various questions to build their team. Once the u
 <a href="https://jestjs.io/" target="_blank">JEST</a>
 
 
-## Project Links
----
+## Project Linke
 
 ## License
----
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Questions
----
+## Questione
 
 If you have any questions about this application, please feel free to contact me directly at:  <a href="mailto: christenmlorber@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"></a>.
 
